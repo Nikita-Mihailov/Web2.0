@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}Видео{% endblock %}
+
+{% block content %}
+<body>
+    <h1>Видео</h1>
+
+    <h2>Видео 1</h2>
+    <video width="640" height="360" controls>
+        <source src="/media/videos/2869262354958.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео тег.
+    </video>
+
+    <h2>Видео 2</h2>
+    <video width="640" height="360" controls>
+        <source src="/media/videos/2869262354958.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео тег.
+    </video>
+{% endblock %}

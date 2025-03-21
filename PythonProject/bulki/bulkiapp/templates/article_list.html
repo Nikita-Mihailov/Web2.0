@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}Статьи блога{% endblock %}
+
+{% block content %}
+    <div class="body_blog_list">
+        <h1>Статьи блога</h1>
+        {% if user.is_superuser %}
+        <h3><a href="{% url 'add_article' %}">Добавить свою статью</a></h3>
+        {% endif %}
+            <ul style="width:100%; display: flex; justify-content: center; flex-direction: column;">
+                {% for article in articles %}
+                    <li class="blog_style">
+                        <h2>{{ article.title }}</h2>
+                        <p><strong>Краткое содержание:</strong> {{ article.summary }}</p>
+                        <p><strong>Дата публикации:</strong> {{ article.pub_date }}</p>
+                        <p><strong>Автор:</strong> {{ article.author }}</p>
+                        <p><a href="{% url 'article_detail' article.id %}">Подробнее</a></p>
+                    </li>
+                {% endfor %}
+            </ul>
+    </div>
+{% endblock %}

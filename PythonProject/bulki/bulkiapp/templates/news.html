@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <section class="welcome-section">
+                <h2>Добро пожаловать!</h2>
+                <p>
+                    Мы рады приветствовать вас в нашей уютной булочной "Аромат свежести". Здесь вы найдете свежую выпечку, приготовленную с любовью и заботой. Наши продукты — это сочетание традиционных рецептов и современных технологий.
+                </p>
+                <img src="{% static 'img/bread.jpg' %}" alt="Свежий хлеб" class="welcome-image">
+            </section>
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide"><img src="{% static 'img/slider1.jpg' %}" alt="Image 1"></li>
+                <li class="glide__slide"><img src="{% static 'img/slider2.jpg' %}" alt="Image 2"></li>
+                <li class="glide__slide"><img src="{% static 'img/slider3.jpg' %}" alt="Image 3"></li>
+            </ul>
+        </div>
+        <div data-glide-el="controls">
+            <button data-glide-dir="<">Prev</button>
+            <button data-glide-dir=">">Next</button>
+        </div>
+    </div>
+    <script>
+        new Glide('.glide', {
+            type: 'carousel',
+            autoplay: 3000,
+            hoverpause: true,
+            perView: 1,
+        }).mount();
+    </script>
+            <section class="special-offers">
+                <h2>Наши специальные предложения</h2>
+                <ul>
+                    <li>Свежий хлеб каждый день</li>
+                    <li>Круассаны с утра</li>
+                    <li>Торты на заказ</li>
+                </ul>
+            </section>
+{% endblock %}

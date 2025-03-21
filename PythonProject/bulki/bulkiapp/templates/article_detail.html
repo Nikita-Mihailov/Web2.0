@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}Блог{% endblock %}
+
+{% block content %}
+    <div class="article-detail">
+        <h1>{{ articles.title }}</h1>
+
+        {% if articles.image %}
+        <img src="{{ articles.image.url }}" alt="{{ articles.title }}" style="max-width: 200px; height: auto;">
+        {% endif %}
+        <p><strong>Краткое содержание:</strong> {{ articles.summary }}</p>
+        <p><strong>Полное содержание:</strong> {{ articles.content }}</p>
+        <p><strong>Автор:</strong> {{ articles.author }}</p>
+        <p><strong>Дата публикации:</strong> {{ articles.pub_date }}</p>
+    <div class="comments">
+            {% if user.is_authenticated %}
+                <div class="com_form">
+                    <h3>Ваш комментарий</h3>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-success">Отправить</button>
+                    </form>
+                </div>
+            {% else %}
+                <h3>Авторизуйтесь, чтобы оставлять комментарии</h3>
+            {% endif %}
+            {% if comments %}
+                {% for comment in comments %}
+                    <div class="comment">
+                        <a style="font-size: 30;">{{ comment.author }}</a>
+                        <a>{{ comment.text }}</a>
+                        <a style="align-self: flex-end;">{{ comment.date_published }}</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <a class="no_comments">Комментариев пока нет</a>
+            {% endif %}
+        </div>
+    <a href="{% url 'article_list' %}">Назад к списку статей</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <h1>Обратная связь</h1>
+    {% if not submitted_data %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" id="submit-button">Отправить отзыв</button>
+        </form>
+    {% endif %}
+    {% if submitted_data %}
+    <h2>Спасибо за ваш отзыв!</h2>
+    <p>Ваши данные:</p>
+    <ul>
+        {% for key, value in submitted_data.items %}
+        <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <script src="{% static 'js/feedback.js' %}"></script>
+{% endblock %}

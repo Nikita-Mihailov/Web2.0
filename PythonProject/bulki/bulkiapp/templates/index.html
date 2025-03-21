@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Булочная "Аромат Свежести"{% endblock %}"</title>
+    <link rel="stylesheet" href="{% static 'style/site.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <link rel="icon" href="{% static 'img/icon.png' %}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Булочная "Аромат свежести"
+                <a href="{% url 'news' %}">
+                    <img src="{% static 'img/logo.png' %}" alt="Логотип" class="welcome-image" >
+                </a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'news' %}">Главная</a></li>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+                <li><a href="{% url 'links' %}">Ссылки</a></li>
+                <li><a href="{% url 'article_list' %}">Блоги</a></li>
+                <li><a href="{% url 'pool' %}">Обратная связь</a></li>
+                <li><a href="{% url 'video_page' %}">Видео</a></li>
+                {% if not user.is_authenticated %}
+                    <li><a href="{% url 'register' %}">Регистрация</a></li>
+                {% else %}
+                    <li><a href="{% url 'profile' %}">Профиль</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Булочная "Аромат свежести". Все права защищены.</p>
+    </footer>
+</body>
+</html>

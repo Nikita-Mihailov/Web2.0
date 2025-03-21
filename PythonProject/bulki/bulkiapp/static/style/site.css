@@ -1,0 +1,161 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #d4a373;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+.welcome-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.welcome-image {
+    width: 100px;
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.about-image {
+    width: 150px;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.special-offers {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.special-offers ul {
+    list-style: none;
+    padding: 0;
+}
+
+.special-offers ul li {
+    background-color: #f4e9da;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.footer {
+    background-color: #d4a373
+}
+
+.submit-button {
+    color: black;
+    background-color: white;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.input-field {
+    background-color: yellow;
+    transition: background-color 0.3s;
+}
+
+.glide__slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.glide {
+    height: 350px;
+}
+
+.blog_style {
+    border: 5px solid;
+    border-radius: 8%;
+    border-color: black;
+    padding: 10px;
+}
+
+.body_blog_list {
+    padding: 50px;
+    background-color: #d4c202;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center
+}
+
+.about-section {
+    padding: 50px;
+    background-color: #d4c202;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center
+}
+
+.links-section {
+    padding: 50px;
+    background-color: #d4c202;
+}
+
+.article-detail {
+    padding: 10px;
+    background-color: #d4c202;
+}
+
+.comments {
+    padding: 10px;
+    background-color: #d4c202;
+    border: 5px solid;
+    border-color: blue;
+}
+
+.comment {
+    padding: 10px;
+    background-color: #d4c202;
+    border: 5px solid;
+    border-color: blue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

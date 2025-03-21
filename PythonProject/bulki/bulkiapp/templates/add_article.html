@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}Создание блога{% endblock %}
+
+{% block content %}
+<h2>Добавить статью в блог</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Добавить статью</button>
+</form>
+{% endblock %}
